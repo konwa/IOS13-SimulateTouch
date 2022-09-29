@@ -39,6 +39,7 @@
 #include "Play.h"
 #include "TouchIndicator/TouchIndicatorWindow.h"
 #include "Activator/ActivatorListener.h"
+#include <dlfcn.h>
 
 
 #define DEBUG_MODE

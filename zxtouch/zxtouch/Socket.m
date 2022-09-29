@@ -67,7 +67,10 @@
     char buffer[length];
     memset(buffer, 0, sizeof(buffer));
     recv(socketHandle, buffer, length, 0);
-    return [NSString stringWithUTF8String:buffer];
+    // return [NSString stringWithUTF8String:buffer];
+    NSString *string = [[NSString alloc] initWithCString:buffer encoding:NSUTF8StringEncoding];
+    NSLog(@"%lu, %@", string.length, string);
+    return string;
 }
 
 -(void)close {
